@@ -1,0 +1,36 @@
+<ion-content class="ion-padding ion-text-center" [fullscreen]="true">
+  <div class="header">
+    <h2>WOAH PIZZA</h2>
+    <img class="logo" src="../../assets/images/PikPng.com_pizza-chef-png_3960083.png" alt="">
+  </div>
+
+  <div class="login-details">
+    <ion-item>
+      <ion-input [disabled]='isDisable' [(ngModel)]='username' clearInput placeholder="Enter Username"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input [disabled]='isDisable' [(ngModel)]='password' type='password' clearInput placeholder="Enter Password"></ion-input>
+    </ion-item>
+
+    <div>
+      <small>username: admin || password: admin</small>
+    </div>
+
+    <button [disabled]='isDisable' type="button" (click)='validate()' class="btn btn-primary btn-lg">
+      Log In
+    </button>
+  </div>
+
+  <div class="err-message" *ngIf = 'attempts < 5 && isSuccess == false'>
+    <small>Incorrect details, {{ attempts }} attempts remaining</small>
+  </div>
+
+  <div class="err-message" *ngIf="isDisable">
+    Wait for 10 seconds
+  </div>
+
+  <div class="sign-up">
+    <p>Need an account? Sign up <a href="">here</a> !</p>
+  </div>
+</ion-content>

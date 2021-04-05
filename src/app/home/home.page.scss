@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Poppins:wght@200&display=swap');
+
+*{
+  font-family: 'Poppins', sans-serif;
+  color: white;
+}
+
+h2 {
+  color: #000 !important;
+}
+
+ion-content{
+  --background: rgb(255,255,255);
+  --background: linear-gradient(180deg, rgba(255,255,255,1) 50%, rgba(113,29,107,1) 50%);
+}
+
+ion-item {
+  --background:  rgba(113,29,107,1);
+  margin-top: 2vh;
+}
+
+.header {
+  font-family: 'Dela Gothic One', cursive;
+}
+
+.logo {
+  height: 50vh;
+}
+
+button {
+  background-color: rgba(113,29,107,1);
+  margin-top: 2vh;
+  border: 1px solid #999;
+}
+
+.sign-up {
+  margin-top: 3vh;
+}
+
+a {
+  font-weight: bold;
+}
+
+.err-message {
+  margin-top: 2vh;
+  color: rgb(255, 255, 255) !important;
+}
