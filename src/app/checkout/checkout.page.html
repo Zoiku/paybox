@@ -10,7 +10,7 @@
 <ion-content>
 
   <div class="order">
-    ORDER
+    <img class="ion-margin" style="width: 50%;" src="../../assets/images/paybox.png" alt="">
   </div>
 
   <ion-list class="ion-margin ion-padding">
@@ -26,11 +26,12 @@
     <p slot="end">{{ cart.cost }}</p>
   </ion-item>
 
-  <ion-button class="ion-margin ion-padding" expand="block" *ngIf='cart.cart.length > 0'>Check OUT</ion-button>
+  <ion-button class="ion-margin ion-padding" expand="block" *ngIf='cart.cart.length > 0' (click)='showModal()'>Check OUT</ion-button>
   <ion-button class="ion-margin ion-padding" expand="block" *ngIf='cart.cart.length > 0' color="danger" (click)='cart.clearcart()'>Clear Cart</ion-button>
 
   <div class="order-something" *ngIf='cart.cart.length == 0'>
-    Empty Cart
+    <img style="width: 70%;" src="../../assets/images/empty.png" alt="">
+    <p class="ion-margin">Empty Cart</p>
   </div>
 
 </ion-content>
