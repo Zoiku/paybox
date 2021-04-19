@@ -7,7 +7,7 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP } from '@ionic-native/http/ngx';
 
 import { PaymentPageModule } from './payment/payment.module';
 
@@ -15,8 +15,8 @@ import { PaymentPageModule } from './payment/payment.module';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, PaymentPageModule],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy}],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, PaymentPageModule],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy}, HTTP],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
