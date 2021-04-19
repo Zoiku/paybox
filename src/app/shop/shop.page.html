@@ -1,17 +1,17 @@
 <ion-content class="ion-padding ion-text-center">
   <ion-fab horizontal="end" vertical="bottom" slot="fixed">
-    <ion-fab-button [disabled]='isDisable' (click)='checkout()'>
+    <ion-fab-button [disabled]="cart.cart.length == 0" routerLink='/checkout'>
       <ion-icon name="cart" ></ion-icon>
-      <ion-badge>{{cart.length}}</ion-badge>
+      <ion-badge>{{cart.cart.length}}</ion-badge>
     </ion-fab-button>
   </ion-fab>
 
-  <ion-card *ngFor='let pizza of pizzas'>
+  <ion-card *ngFor='let pizza of cart.pizzas'>
     <img [src]="pizza.imgUrl"/>
     <ion-card-header style="background-color: rgb(227, 227, 227);">
       <ion-card-subtitle>GHC {{pizza.price}}</ion-card-subtitle>
       <ion-card-title style="margin: 10px;">{{pizza.name}}</ion-card-title>
-      <ion-item style="cursor: pointer;" class="add-to-cart" (click)='add(pizza)' lines='none'>
+      <ion-item style="cursor: pointer;" class="add-to-cart" (click)='cart.add(pizza)' lines='none'>
         <ion-label>Add to cart</ion-label>
         <ion-icon name="add-circle"></ion-icon>
       </ion-item>

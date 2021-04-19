@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import { CartService } from '../services/cart.service';
 
 @Component({
   selector: 'app-checkout',
@@ -8,12 +8,8 @@ import {ActivatedRoute} from '@angular/router';
 })
 export class CheckoutPage implements OnInit {
 
+  constructor(private cart:CartService) { }
 
-  constructor(public activated_route:ActivatedRoute) { }
-
-  ngOnInit() {
-    let checkout_items:Array<object> = JSON.parse(this.activated_route.snapshot.paramMap.get('cart'));
-    console.log(checkout_items);
-  }
+  ngOnInit() {}
 
 }
