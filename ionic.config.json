@@ -1,5 +1,7 @@
 {
   "name": "paybox",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
